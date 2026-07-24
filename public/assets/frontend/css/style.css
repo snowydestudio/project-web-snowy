@@ -1,0 +1,289 @@
+/* ============================
+   1. GLOBAL & RESET
+   ============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Warna latar belakang web sedikit kebiruan sangat muda */
+    background-color: #f8fbff; 
+    color: #333333;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ============================
+   2. NAVBAR STYLING
+   ============================ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 6%;
+    background-color: #ffffff;
+    /* Memberikan bayangan halus di bawah navbar */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-logo img {
+    height: 38px;
+    object-fit: contain;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.navbar-menu a {
+    color: #1a1a1a;
+    font-size: 14.5px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #007791;
+}
+
+/* Tombol Hubungi Kami */
+.navbar-menu a.btn-hubungi {
+    background-color: #00758f;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-menu a.btn-hubungi:hover {
+    background-color: #005f74;
+}
+
+/* ============================
+   3. FOOTER STYLING
+   ============================ */
+.footer-section {
+    background-color: #ffffff;
+    padding: 70px 6% 30px 6%;
+    border-top: 1px solid #eef2f6;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+/* Bagian Kiri: Brand */
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-brand img {
+    height: 38px;
+    margin-bottom: 24px;
+}
+
+.footer-brand p {
+    color: #828282;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Bagian Kanan: Kolom Menu */
+.footer-links-group {
+    display: flex;
+    gap: 90px;
+}
+
+.footer-column h4 {
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-column ul li a {
+    color: #828282;
+    font-size: 15px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #1a1a1a;
+}
+
+/* Bagian Bawah: Copyright */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #f1f1f1;
+    padding-top: 25px;
+}
+
+.footer-bottom p {
+    color: #555555;
+    font-size: 13.5px;
+    font-weight: 500;
+}
+
+/* Responsif Dasar untuk Mobile */
+@media (max-width: 768px) {
+    .navbar { padding: 16px 20px; }
+    .navbar-menu { display: none; /* Sembunyikan menu di HP sementara */ }
+    .footer-links-group { flex-wrap: wrap; gap: 40px; }
+}
+
+/* ============================
+   4. LANDING PAGE - HERO SECTION
+   ============================ */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 6% 100px 6%;
+    background-color: #f8fbff; /* Sesuai dengan warna body */
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+    max-width: 800px;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.hero-section h1 span {
+    color: #00758f; /* Aksen warna tosca dari tombol */
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    color: #666666;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary {
+    background-color: #00758f;
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #005f74;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #1a1a1a;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid #d1d5db;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    border-color: #1a1a1a;
+    background-color: #f3f4f6;
+}
+
+/* ============================
+   5. LANDING PAGE - SERVICES
+   ============================ */
+.services-section {
+    padding: 80px 6%;
+    background-color: #ffffff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.section-header p {
+    color: #828282;
+    font-size: 1rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #f9fbfe;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid #eef2f6;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 117, 143, 0.08);
+    transform: translateY(-5px);
+    border-color: #cceef5;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+}
+
+.service-card p {
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
