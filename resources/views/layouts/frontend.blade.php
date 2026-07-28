@@ -5,21 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snowy Company Profile</title>
     
-    <!-- Memanggil file style.css dari folder public -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'snowy-primary': '#00758f',
+              'snowy-primary-hover': '#005f74',
+              'snowy-light': '#e6f8fc',
+              'snowy-dark': '#1a1a1a',
+              'snowy-gray': '#666666',
+              'snowy-bundle-light': '#f0f9ff',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
 </head>
 <body>
 
-    <!-- 1. Memanggil bagian Navbar dari folder partials -->
     @include('partials.navbar')
 
-    <!-- 2. Area Konten Utama (Berubah-ubah sesuai halaman) -->
     <main style="min-height: 70vh;">
         @yield('content')
     </main>
 
-    <!-- 3. Memanggil bagian Footer dari folder partials -->
     @include('partials.footer')
+
+    <!-- TAMBAHKAN KODE INI UNTUK MEMANGGIL MAIN.JS -->
+    <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
 
 </body>
 </html>
