@@ -1,0 +1,88 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom Scrollbar for the horizontal gallery */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Accordion Specifics */
+.accordion-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f1f5f9;
+}
+
+.accordion-item:hover {
+    border-color: #cbd5e1;
+}
+
+.accordion-item.open {
+    background-color: #ffffff;
+    border-color: #0D7B8A;
+    box-shadow: 0 10px 25px -5px rgba(13, 123, 138, 0.08);
+}
+
+.accordion-item.open .icon {
+    transform: rotate(45deg);
+    background-color: #0D7B8A;
+    color: #ffffff;
+    border-color: #0D7B8A;
+}
+
+.accordion-item.open .num-badge {
+    background-color: #0D7B8A;
+    color: #ffffff;
+}
+
+/* Smooth Image Drag effect enhancement */
+#gallery {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#gallery:active,
+#gallery.grabbing {
+    cursor: grabbing !important;
+}
+
+/* Glass Navbar */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+/* Sticky Side Number Navbar for FAQ / Accordion */
+.faq-nav-btn {
+    transition: all 0.25s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-nav-btn.active {
+    background-color: #ffffff !important;
+    color: #0D7B8A !important;
+    opacity: 1 !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.1);
+}
