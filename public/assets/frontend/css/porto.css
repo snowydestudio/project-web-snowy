@@ -1,0 +1,65 @@
+/* style.css */
+
+/* Custom Smooth Scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base state for scroll animation */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Active state triggered by JavaScript when element enters viewport */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay utilities to create cascading fade-in effects */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* Subtle image overlay hover improvement */
+.group:hover .absolute.inset-0 {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3), transparent);
+}
+
+/* Ensure smooth image scaling on hover */
+img {
+    backface-visibility: hidden;
+}
+
+/* Glass Navbar */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Custom horizontal scrollbar hiding utility */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Scroll navigation button reveal state */
+.scroll-nav-btn {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.9);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+}
+.group\/carousel:hover .scroll-nav-btn,
+.scroll-nav-btn.is-visible {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+    pointer-events: auto;
+}
