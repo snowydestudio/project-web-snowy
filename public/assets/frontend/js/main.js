@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!isDown) return; // Hentikan fungsi jika mouse tidak sedang ditekan
             e.preventDefault();
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2; // Angka 2 adalah kecepatan geser (bisa disesuaikan)
+            const walk = (x - startX) * 2; // Angka 2 adalah kecepatan geser
             slider.scrollLeft = scrollLeft - walk;
         });
     }
@@ -78,5 +78,18 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+
+    // ==========================================
+    // 3. INISIALISASI ANIMASI SCROLL (AOS)
+    // ==========================================
+    // Pastikan script AOS dari CDN sudah dipanggil di HTML/Blade Anda
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            once: true,        // Animasi hanya berjalan 1x saat pertama kali di-scroll ke bawah
+            offset: 80,        // Jarak dari bawah layar sebelum animasi dimulai (dalam px)
+            duration: 800,     // Durasi animasi (800 milidetik = sedikit lebih santai)
+            easing: 'ease-out-cubic', // Efek perlambatan yang elegan
+        });
+    }
 
 });

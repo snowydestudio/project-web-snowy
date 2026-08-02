@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snowy Company Profile</title>
     
+    <!-- FontAwesome (Dibutuhkan untuk icon di About) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,6 +29,9 @@
         }
       }
     </script>
+    
+    <!-- LUBANG UNTUK CSS KHUSUS HALAMAN -->
+    @stack('styles')
 </head>
 <body>
 
@@ -37,8 +43,10 @@
 
     @include('partials.footer')
 
-    <!-- TAMBAHKAN KODE INI UNTUK MEMANGGIL MAIN.JS -->
     <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+    
+    <!-- LUBANG UNTUK JS KHUSUS HALAMAN -->
+    @stack('scripts')
 
 </body>
 </html>

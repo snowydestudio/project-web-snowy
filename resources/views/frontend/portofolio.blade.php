@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snowy - Portofolio</title>
-    
-    <!-- Google Fonts: Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Tailwind Config for Custom Colors/Fonts -->
+@extends('layouts.frontend')
+
+@section('title', 'Portofolio - Snowy Digital Agency')
+
+@push('styles')
+    <!-- Konfigurasi Tailwind Custom Anda -->
     <script>
         tailwind.config = {
             theme: {
@@ -29,7 +13,7 @@
                     },
                     colors: {
                         primary: '#0D7B8A', // Teal color matching navbar and agency theme
-                        secondary: '#F0F9FA', // Background color for CTA section
+                        secondary: '#D4F6FF', // Background color for CTA section
                         ctaBg: '#E6F4F9',   // Background section CTA
                     }
                 }
@@ -37,15 +21,15 @@
         }
     </script>
 
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="component/porto.css">
-</head>
-<body class="text-gray-900 bg-white font-sans antialiased overflow-x-hidden">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/porto.css') }}">
+@endpush
 
-    <!-- Navbar -->
-    <div id="navbar-placeholder"></div>
-
-    <!-- Hero Section -->
+@section('content')
+    <!-- Hero Section (Tetap Statis) -->
     <section class="pt-40 pb-20 px-6 md:px-16 max-w-4xl mx-auto text-center animate-on-scroll">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
             Setiap Proyek Dimulai dengan Kepercayaan.
@@ -55,7 +39,9 @@
         </p>
     </section>
 
-    <!-- Studi Kasus Pilihan -->
+    <!-- ==========================================
+         BAGIAN INI YANG DIOTOMATISKAN OLEH CMS 
+         ========================================== -->
     <section id="studi-kasus-section" class="py-16 px-6 md:px-16 max-w-7xl mx-auto">
         <div class="flex justify-between items-center mb-8 animate-on-scroll">
             <span class="text-sm font-medium text-gray-400 flex items-center gap-2">
@@ -72,30 +58,47 @@
                 <i class="fas fa-chevron-right text-lg"></i>
             </button>
 
-            <!-- Card Container -->
+            <!-- Card Container (Looping dari Database) -->
             <div id="studi-kasus-container" class="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory no-scrollbar" style="scroll-behavior: smooth;">
-                <!-- Card 1 -->
-                <div class="flex-none w-[85vw] sm:w-[500px] md:w-[580px] h-[360px] md:h-[400px] relative rounded-3xl overflow-hidden group cursor-pointer snap-start shrink-0">
-                    <img src="image porto/Frame 89.png" alt="Frame 89" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <!-- Gradient Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <!-- Content -->
-                    <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white w-full">
-                        <p class="text-sm font-medium opacity-80 mb-2">Industri: Optik | Services: Brand Identity, Landing Page, UI/UX</p>
-                        <h3 class="text-2xl md:text-3xl font-bold mb-2">Optik Dwitunggal</h3>
-                        <p class="text-gray-200 text-sm md:text-base">Mengubah Optik Dwitunggal Menjadi Brand yang Siap di Era Digital.</p>
+                
+            @forelse($portfolios as $portfolio)
+                <!-- Card Dinamis dengan Foto Utuh Tanpa Terpotong -->
+                <div class="flex-none w-[90vw] sm:w-[540px] md:w-[640px] h-[380px] md:h-[440px] relative rounded-3xl overflow-hidden group cursor-pointer snap-start shrink-0 shadow-lg bg-gray-950 flex items-center justify-center">
+                    
+                    <!-- 1. Menggunakan object-contain agar foto utuh dan tidak terpotong -->
+                    <img src="{{ asset('storage/' . $portfolio->image) }}" alt="{{ $portfolio->title }}" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 relative z-10">
+                    
+                    <!-- 2. Gradient Overlay untuk teks di bagian bawah -->
+                    <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/95 via-black/60 to-transparent z-20 pointer-events-none"></div>
+                    
+                    <!-- 3. Content Teks dari CMS -->
+                    <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white w-full z-30">
+                        <p class="text-sm md:text-base font-medium opacity-90 mb-2">
+                            Industri: {{ $portfolio->industry }} | Services: {{ $portfolio->services }}
+                        </p>
+                        
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2">{{ $portfolio->title }}</h3>
+                        
+                        <p class="text-gray-200 text-sm md:text-base line-clamp-2">
+                            {{ \Illuminate\Support\Str::limit($portfolio->result, 80, '...') }}
+                        </p>
                     </div>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="flex-none w-[85vw] sm:w-[500px] md:w-[580px] h-[360px] md:h-[400px] relative rounded-3xl overflow-hidden group cursor-pointer snap-start shrink-0">
-                    <img src="image porto/Frame 90.png" alt="Frame 90" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            @empty
+                <!-- Tampilan jika CMS belum ada isinya -->
+                <div class="flex-none w-full flex items-center justify-center h-[380px] border-2 border-dashed border-gray-300 rounded-3xl bg-gray-50">
+                    <p class="text-gray-500 font-medium text-lg">Belum ada portofolio yang ditambahkan dari Admin Panel.</p>
                 </div>
+            @endforelse
+
             </div>
         </div>
     </section>
+    <!-- ==========================================
+         BATAS BAGIAN YANG DIOTOMATISKAN 
+         ========================================== -->
 
-    <!-- Tim di Balik Proyek Ini -->
+    <!-- Tim di Balik Proyek Ini (Tetap Statis) -->
     <section class="py-16 px-6 md:px-16 max-w-7xl mx-auto">
         <div class="mb-12 animate-on-scroll">
             <h2 class="text-3xl font-bold mb-4">Tim Di Balik Proyek Ini</h2>
@@ -130,7 +133,7 @@
         </div>
     </section>
 
-    <!-- Dokumentasi -->
+    <!-- Dokumentasi (Tetap Statis) -->
     <section class="py-16 px-6 md:px-16 max-w-7xl mx-auto">
         <h2 class="text-3xl font-bold mb-10 animate-on-scroll">Dokumentasi</h2>
         
@@ -147,53 +150,20 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-24 bg-secondary">
-        <div class="max-w-4xl mx-auto px-4 text-center" data-aos="zoom-in">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Saatnya Bisnis Anda Tampil Lebih Profesional.</h2>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="bg-primary text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-teal-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">Konsultasi</a>
-                <a href="#" class="bg-white text-gray-900 border border-gray-200 px-10 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition shadow-sm hover:shadow transform hover:-translate-y-1">Pesan</a>
-            </div>
-        </div>
-    </section>
+<!-- ==========================================
+         SECTION 12: FINAL CTA (Dipanggil dari Partials)
+         ========================================== -->
+    @include('partials.cta')
+@endsection
 
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
+@push('scripts')
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- Load Navbar & Footer via Fetch -->
     <script>
-        // Load Navbar
-        fetch('navbar.html')
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById('navbar-placeholder').innerHTML = html;
-                const currentPage = window.location.pathname.split('/').pop() || 'portofolio.html';
-                document.querySelectorAll('#navbar-placeholder a').forEach(link => {
-                    link.classList.remove('text-primary');
-                    link.classList.add('text-gray-500');
-
-                    const text = link.textContent.trim();
-                    const href = link.getAttribute('href');
-                    if (currentPage === 'portofolio.html' && (text === 'Portofolio' || href === 'portofolio.html')) {
-                        link.classList.remove('text-gray-500');
-                        link.classList.add('text-primary');
-                    }
-                });
-            });
-
-        // Load Footer
-        fetch('footer.html')
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById('footer-placeholder').innerHTML = html;
-            });
+        // Inisialisasi AOS bawaan dari HTML Anda
+        AOS.init();
     </script>
 
     <!-- Custom JS -->
-    <script src="component/porto.js"></script>
-</body>
-</html>
+    <script src="{{ asset('assets/frontend/js/porto.js') }}"></script>
+@endpush
