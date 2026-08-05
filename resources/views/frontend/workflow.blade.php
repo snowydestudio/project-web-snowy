@@ -1,20 +1,35 @@
-@extends('layouts.frontend')
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowy - Our Workflow</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans for Modern UI feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-@section('title', 'Proses Kerja - Snowy Digital Agency')
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-@push('styles')
-    <!-- Konfigurasi Tailwind Custom Khusus Halaman Workflow -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"'],
                     },
                     colors: {
                         primary: '#0D7B8A',
                         primaryHover: '#09636f',
-                        secondary: '#F0F9FA',
+                        secondary: '#D4F6FF',
                         lightAccent: '#F0F9FA',
                         darkText: '#111827',
                         grayBg: '#F8FAFC',
@@ -24,226 +39,261 @@
         }
     </script>
 
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/workflow.css') }}">
-@endpush
+    <link rel="stylesheet" href="component/workflow.css">
+</head>
+<body class="text-gray-800 antialiased overflow-x-hidden">
 
-@section('content')
-    <!-- Hero Section -->
-    <section class="pt-40 pb-20 px-6 max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-darkText leading-tight mb-6">
-            Setiap Proyek Hebat<br>Berawal dari Pemahaman.
-        </h1>
-        <p class="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto font-medium">
-            Kami percaya hasil terbaik lahir dari proses yang jelas, kolaboratif, dan terstruktur.
-        </p>
-    </section>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
 
-    <!-- Philosophy Section -->
-    <section class="py-16 px-6 md:px-12 max-w-7xl mx-auto" data-aos="fade-up">
-        <div class="mb-12">
-            <h3 class="text-xl font-bold text-darkText mb-4">Filosofi Kami</h3>
-            <h2 class="text-3xl md:text-4xl font-bold text-darkText leading-snug max-w-4xl">
-                Kami memulai dengan memahami bisnis, tujuan, pengguna, dan tantangan yang ingin diselesaikan
-            </h2>
-        </div>
-        
-        <!-- Horizontal Image Gallery with Overlay Nav -->
-        <div class="relative group/gallery">
-            <!-- Transparent Floating Overlay Buttons -->
-            <button id="gallery-prev-overlay" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/50 backdrop-blur-md border border-white/70 text-gray-800 hover:bg-primary hover:text-white flex items-center justify-center shadow-md transition-all opacity-0 group-hover/gallery:opacity-100 transform hover:scale-110 active:scale-95 cursor-pointer">
-                <i class="fas fa-chevron-left text-sm"></i>
-            </button>
-            <button id="gallery-next-overlay" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/50 backdrop-blur-md border border-white/70 text-gray-800 hover:bg-primary hover:text-white flex items-center justify-center shadow-md transition-all opacity-0 group-hover/gallery:opacity-100 transform hover:scale-110 active:scale-95 cursor-pointer">
-                <i class="fas fa-chevron-right text-sm"></i>
-            </button>
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="w-full min-h-screen flex flex-col justify-center items-center pt-28 pb-12 px-6 max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-darkText leading-tight mb-6">
+                Setiap Proyek Hebat<br>Berawal dari Pemahaman.
+            </h1>
+            <p class="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto font-medium">
+                Kami percaya hasil terbaik lahir dari proses yang jelas, kolaboratif, dan terstruktur.
+            </p>
+        </section>
 
-            <div class="flex gap-6 overflow-x-auto pb-8 hide-scrollbar" id="gallery">
-                <div class="w-[26rem] sm:w-[28rem] h-72 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex-shrink-0 group" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" alt="Brainstorming" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <!-- 2. Philosophy Section -->
+        <section class="w-full min-h-screen flex flex-col justify-center py-16 px-6 md:px-12 max-w-7xl mx-auto" data-aos="fade-up">
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-darkText mb-4">Filosofi Kami</h3>
+                <h2 class="text-3xl md:text-4xl font-bold text-darkText leading-snug max-w-4xl">
+                    Kami memulai dengan memahami bisnis, tujuan, pengguna, dan tantangan yang ingin diselesaikan
+                </h2>
+            </div>
+            
+            <!-- Horizontal Image Gallery with Bottom Left Nav -->
+            <div>
+                <div class="flex gap-6 overflow-x-auto pb-4 hide-scrollbar" id="gallery">
+                    <div class="w-[26rem] sm:w-[28rem] h-72 rounded-2xl overflow-hidden shadow-sm flex-shrink-0" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" alt="Brainstorming" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-[26rem] sm:w-[28rem] h-72 rounded-2xl overflow-hidden shadow-sm flex-shrink-0" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80" alt="Wireframing" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-[26rem] sm:w-[28rem] h-72 rounded-2xl overflow-hidden shadow-sm flex-shrink-0" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Development" class="w-full h-full object-cover">
+                    </div>
                 </div>
-                <div class="w-[26rem] sm:w-[28rem] h-72 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex-shrink-0 group" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80" alt="Wireframing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="w-[26rem] sm:w-[28rem] h-72 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex-shrink-0 group" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Development" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                <!-- Navigation Buttons (Bottom Right Below Gallery) -->
+                <div class="flex justify-end items-center gap-3 mt-4">
+                    <button id="gallery-prev" class="w-11 h-11 rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-primary hover:text-white hover:border-primary flex items-center justify-center shadow-sm transition-all active:scale-95 cursor-pointer" aria-label="Previous">
+                        <i class="fas fa-chevron-left text-sm"></i>
+                    </button>
+                    <button id="gallery-next" class="w-11 h-11 rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-primary hover:text-white hover:border-primary flex items-center justify-center shadow-sm transition-all active:scale-95 cursor-pointer" aria-label="Next">
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Workflow Section -->
-    <section class="py-16 px-6 md:px-12 max-w-7xl mx-auto" data-aos="fade-up">
-        <div class="flex justify-end mb-10">
-            <h3 class="text-2xl font-bold text-darkText">Alur Kerja Kami</h3>
-        </div>
-
-        <div class="flex flex-col md:flex-row gap-6">
-            <!-- Sticky Side Number Navbar for FAQ / Accordion -->
-            <div class="hidden md:flex flex-col bg-primary text-white rounded-xl py-3 px-1.5 w-12 items-center space-y-2 sticky top-28 self-start shadow-md z-30 transition-all">
-                <button data-index="0" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="01 Berdiskusi">1</button>
-                <button data-index="1" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="02 Memahami Kebutuhan">2</button>
-                <button data-index="2" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="03 Menyusun Strategi">3</button>
-                <button data-index="3" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="04 Penawaran Proyek">4</button>
-                <button data-index="4" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="05 Desain">5</button>
-                <button data-index="5" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="06 Pengembangan">6</button>
-                <button data-index="6" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="07 Peluncuran">7</button>
-                <button data-index="7" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="08 Dukungan & Pengembangan">8</button>
+        <!-- 3. Workflow Section -->
+        <section class="w-full min-h-screen flex flex-col justify-center py-16 px-6 md:px-12 max-w-7xl mx-auto" data-aos="fade-up">
+            <div class="flex justify-end mb-10">
+                <h3 class="text-2xl font-bold text-darkText">Alur Kerja Kami</h3>
             </div>
 
-            <!-- Accordion List -->
-            <div class="flex-1 w-full flex flex-col gap-3">
-                <!-- Item 1 -->
-                <div data-index="0" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="50">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-6">
-                            <span class="text-2xl font-bold text-darkText">01</span>
-                            <div>
-                                <h4 class="font-bold text-darkText text-lg">Berdiskusi</h4>
-                                <p class="text-sm text-gray-500">Memulai Percakapan</p>
-                            </div>
-                        </div>
-                        <span class="icon text-2xl font-light transition-transform duration-300">+</span>
-                    </div>
-                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
-                        <p class="pt-4 text-gray-600 text-sm">Sesi konsultasi awal untuk saling mengenal dan memahami garis besar ide serta kebutuhan proyek Anda.</p>
-                    </div>
+            <div class="flex flex-col md:flex-row gap-6">
+                <!-- Sticky Side Number Navbar for FAQ / Accordion -->
+                <div class="hidden md:flex flex-col bg-primary text-white rounded-xl py-3 px-1.5 w-12 items-center space-y-2 sticky top-28 self-start shadow-md z-30 transition-all">
+                    <button data-index="0" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="01 Berdiskusi">1</button>
+                    <button data-index="1" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="02 Memahami Kebutuhan">2</button>
+                    <button data-index="2" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="03 Menyusun Strategi">3</button>
+                    <button data-index="3" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="04 Penawaran Proyek">4</button>
+                    <button data-index="4" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="05 Desain">5</button>
+                    <button data-index="5" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="06 Pengembangan">6</button>
+                    <button data-index="6" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="07 Peluncuran">7</button>
+                    <button data-index="7" class="faq-nav-btn w-9 h-9 rounded-lg font-bold text-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 active:scale-95" title="08 Dukungan & Pengembangan">8</button>
                 </div>
-                <!-- Item 2 -->
-                <div data-index="1" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-6">
-                            <span class="text-2xl font-bold text-darkText">02</span>
-                            <div>
-                                <h4 class="font-bold text-darkText text-lg">Memahami Kebutuhan</h4>
-                                <p class="text-sm text-gray-500">Memahami Bisnis Anda</p>
+
+                <!-- Accordion List -->
+                <div class="flex-1 w-full flex flex-col gap-3">
+                    <!-- Item 1 -->
+                    <div data-index="0" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="50">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-6">
+                                <span class="text-2xl font-bold text-darkText">01</span>
+                                <div>
+                                    <h4 class="font-bold text-darkText text-lg">Berdiskusi</h4>
+                                    <p class="text-sm text-gray-500">Memulai Percakapan</p>
+                                </div>
                             </div>
+                            <span class="icon text-2xl font-light transition-transform duration-300">+</span>
                         </div>
-                        <span class="icon text-2xl font-light transition-transform duration-300">+</span>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                            <p class="pt-4 text-gray-600 text-sm">Sesi konsultasi awal untuk saling mengenal dan memahami garis besar ide serta kebutuhan proyek Anda.</p>
+                        </div>
                     </div>
-                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
-                        <p class="pt-4 text-gray-600 text-sm">Riset mendalam mengenai target audiens, kompetitor, dan sasaran bisnis yang ingin dicapai.</p>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div data-index="2" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="150">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-6">
-                            <span class="text-2xl font-bold text-darkText">03</span>
-                            <div>
-                                <h4 class="font-bold text-darkText text-lg">Menyusun Strategi</h4>
-                                <p class="text-sm text-gray-500">Merancang Solusi Terbaik</p>
+                    <!-- Item 2 -->
+                    <div data-index="1" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-6">
+                                <span class="text-2xl font-bold text-darkText">02</span>
+                                <div>
+                                    <h4 class="font-bold text-darkText text-lg">Memahami Kebutuhan</h4>
+                                    <p class="text-sm text-gray-500">Memahami Bisnis Anda</p>
+                                </div>
                             </div>
+                            <span class="icon text-2xl font-light transition-transform duration-300">+</span>
                         </div>
-                        <span class="icon text-2xl font-light transition-transform duration-300">+</span>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                            <p class="pt-4 text-gray-600 text-sm">Riset mendalam mengenai target audiens, kompetitor, dan sasaran bisnis yang ingin dicapai.</p>
+                        </div>
                     </div>
-                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
-                        <p class="pt-4 text-gray-600 text-sm">Membuat arsitektur informasi, user flow, dan wireframe sebagai pondasi proyek.</p>
-                    </div>
-                </div>
-                <!-- Item 4 -->
-                <div data-index="3" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-6">
-                            <span class="text-2xl font-bold text-darkText">04</span>
-                            <div>
-                                <h4 class="font-bold text-darkText text-lg">Penawaran Proyek</h4>
-                                <p class="text-sm text-gray-500">Menyepakati Ruang Lingkup Proyek</p>
+                    <!-- Item 3 -->
+                    <div data-index="2" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="150">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-6">
+                                <span class="text-2xl font-bold text-darkText">03</span>
+                                <div>
+                                    <h4 class="font-bold text-darkText text-lg">Menyusun Strategi</h4>
+                                    <p class="text-sm text-gray-500">Merancang Solusi Terbaik</p>
+                                </div>
                             </div>
+                            <span class="icon text-2xl font-light transition-transform duration-300">+</span>
                         </div>
-                        <span class="icon text-2xl font-light transition-transform duration-300">+</span>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                            <p class="pt-4 text-gray-600 text-sm">Membuat arsitektur informasi, user flow, dan wireframe sebagai pondasi proyek.</p>
+                        </div>
                     </div>
-                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
-                        <p class="pt-4 text-gray-600 text-sm">Finalisasi timeline, deliverables, dan anggaran sebelum masuk tahap eksekusi.</p>
-                    </div>
-                </div>
-                <!-- Item 5 -->
-                <div data-index="4" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="250">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-6">
-                            <span class="text-2xl font-bold text-darkText">05</span>
-                            <div>
-                                <h4 class="font-bold text-darkText text-lg">Desain</h4>
-                                <p class="text-sm text-gray-500">Mengubah Ide Menjadi Pengalaman</p>
+                    <!-- Item 4 -->
+                    <div data-index="3" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-6">
+                                <span class="text-2xl font-bold text-darkText">04</span>
+                                <div>
+                                    <h4 class="font-bold text-darkText text-lg">Penawaran Proyek</h4>
+                                    <p class="text-sm text-gray-500">Menyepakati Ruang Lingkup Proyek</p>
+                                </div>
                             </div>
+                            <span class="icon text-2xl font-light transition-transform duration-300">+</span>
                         </div>
-                        <span class="icon text-2xl font-light transition-transform duration-300">+</span>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                            <p class="pt-4 text-gray-600 text-sm">Finalisasi timeline, deliverables, dan anggaran sebelum masuk tahap eksekusi.</p>
+                        </div>
                     </div>
-                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
-                        <p class="pt-4 text-gray-600 text-sm">Eksplorasi visual, pembuatan UI/UX, dan interaktif prototipe (High-Fidelity).</p>
-                    </div>
-                </div>
-                <!-- Item 6 -->
-                <div data-index="5" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-6">
-                            <span class="text-2xl font-bold text-darkText">06</span>
-                            <div>
-                                <h4 class="font-bold text-darkText text-lg">Pengembangan</h4>
-                                <p class="text-sm text-gray-500">Membangun Produk Digital</p>
+                    <!-- Item 5 -->
+                    <div data-index="4" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="250">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-6">
+                                <span class="text-2xl font-bold text-darkText">05</span>
+                                <div>
+                                    <h4 class="font-bold text-darkText text-lg">Desain</h4>
+                                    <p class="text-sm text-gray-500">Mengubah Ide Menjadi Pengalaman</p>
+                                </div>
                             </div>
+                            <span class="icon text-2xl font-light transition-transform duration-300">+</span>
                         </div>
-                        <span class="icon text-2xl font-light transition-transform duration-300">+</span>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                            <p class="pt-4 text-gray-600 text-sm">Eksplorasi visual, pembuatan UI/UX, dan interaktif prototipe (High-Fidelity).</p>
+                        </div>
                     </div>
-                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
-                        <p class="pt-4 text-gray-600 text-sm">Penulisan kode clean code menggunakan teknologi modern yang responsif dan optimal.</p>
-                    </div>
-                </div>
-                <!-- Item 7 -->
-                <div data-index="6" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="350">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-6">
-                            <span class="text-2xl font-bold text-darkText">07</span>
-                            <div>
-                                <h4 class="font-bold text-darkText text-lg">Peluncuran</h4>
-                                <p class="text-sm text-gray-500">Siap Digunakan</p>
+                    <!-- Item 6 -->
+                    <div data-index="5" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-6">
+                                <span class="text-2xl font-bold text-darkText">06</span>
+                                <div>
+                                    <h4 class="font-bold text-darkText text-lg">Pengembangan</h4>
+                                    <p class="text-sm text-gray-500">Membangun Produk Digital</p>
+                                </div>
                             </div>
+                            <span class="icon text-2xl font-light transition-transform duration-300">+</span>
                         </div>
-                        <span class="icon text-2xl font-light transition-transform duration-300">+</span>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                            <p class="pt-4 text-gray-600 text-sm">Penulisan kode clean code menggunakan teknologi modern yang responsif dan optimal.</p>
+                        </div>
                     </div>
-                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
-                        <p class="pt-4 text-gray-600 text-sm">Quality Assurance (QA) testing, perbaikan bug, dan deployment website ke server live.</p>
-                    </div>
-                </div>
-                <!-- Item 8 -->
-                <div data-index="7" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-6">
-                            <span class="text-2xl font-bold text-darkText">08</span>
-                            <div>
-                                <h4 class="font-bold text-darkText text-lg">Dukungan & Pengembangan</h4>
-                                <p class="text-sm text-gray-500">Terus Tumbuh Bersama</p>
+                    <!-- Item 7 -->
+                    <div data-index="6" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="350">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-6">
+                                <span class="text-2xl font-bold text-darkText">07</span>
+                                <div>
+                                    <h4 class="font-bold text-darkText text-lg">Peluncuran</h4>
+                                    <p class="text-sm text-gray-500">Siap Digunakan</p>
+                                </div>
                             </div>
+                            <span class="icon text-2xl font-light transition-transform duration-300">+</span>
                         </div>
-                        <span class="icon text-2xl font-light transition-transform duration-300">+</span>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                            <p class="pt-4 text-gray-600 text-sm">Quality Assurance (QA) testing, perbaikan bug, dan deployment website ke server live.</p>
+                        </div>
                     </div>
-                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
-                        <p class="pt-4 text-gray-600 text-sm">Monitoring performa, maintenance rutin, dan iterasi fitur baru berdasarkan data analitik.</p>
+                    <!-- Item 8 -->
+                    <div data-index="7" class="accordion-item bg-grayBg rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-200" data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-6">
+                                <span class="text-2xl font-bold text-darkText">08</span>
+                                <div>
+                                    <h4 class="font-bold text-darkText text-lg">Dukungan & Pengembangan</h4>
+                                    <p class="text-sm text-gray-500">Terus Tumbuh Bersama</p>
+                                </div>
+                            </div>
+                            <span class="icon text-2xl font-light transition-transform duration-300">+</span>
+                        </div>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300">
+                            <p class="pt-4 text-gray-600 text-sm">Monitoring performa, maintenance rutin, dan iterasi fitur baru berdasarkan data analitik.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-<!-- ==========================================
-         SECTION 12: FINAL CTA (Dipanggil dari Partials)
-         ========================================== -->
-    @include('partials.cta')
-@endsection
+        <!-- 4. CTA Section -->
+        <section class="w-full min-h-screen flex flex-col justify-center bg-white overflow-hidden">
+            <div class="w-full bg-[#D4F6FF] py-20 md:py-24 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Saatnya Bisnis Anda Tampil Lebih Profesional.</h2>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#" class="bg-primary text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-teal-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">Konsultasi</a>
+                        <a href="#" class="bg-white text-gray-900 border border-gray-200 px-10 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 transition shadow-sm hover:shadow transform hover:-translate-y-1">Pesan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-@push('scripts')
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Load Navbar & Footer via Fetch -->
     <script>
-        AOS.init({
-            once: true,
-            offset: 100,
-        });
+        // Load Navbar
+        fetch('navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('navbar-placeholder').innerHTML = html;
+                const currentPage = window.location.pathname.split('/').pop();
+                document.querySelectorAll('#navbar-placeholder a').forEach(link => {
+                    link.classList.remove('text-primary');
+                    link.classList.add('text-gray-500');
+
+                    const text = link.textContent.trim();
+                    if (currentPage === 'workflow.html' && (text === 'Proses kerja Kami' || text === 'Workflow')) {
+                        link.classList.remove('text-gray-500');
+                        link.classList.add('text-primary');
+                    }
+                });
+            });
+
+        // Load Footer
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            });
     </script>
 
-    <!-- Custom JS untuk Workflow (Accordion & Gallery) -->
-    <script src="{{ asset('assets/frontend/js/workflow.js') }}"></script>
-@endpush
+    <script src="component/workflow.js"></script>
+</body>
+</html>
