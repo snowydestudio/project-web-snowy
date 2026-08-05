@@ -1,5 +1,6 @@
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+/* Universal Font Enforcement: Plus Jakarta Sans */
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, div {
+    font-family: 'Plus Jakarta Sans';
 }
 
 /* Custom Scrollbar for the horizontal gallery */
@@ -39,11 +40,9 @@ body {
     box-shadow: 0 10px 25px -5px rgba(13, 123, 138, 0.08);
 }
 
+/* Rotate plus icon on click without green background box */
 .accordion-item.open .icon {
     transform: rotate(45deg);
-    background-color: #0D7B8A;
-    color: #ffffff;
-    border-color: #0D7B8A;
 }
 
 .accordion-item.open .num-badge {
