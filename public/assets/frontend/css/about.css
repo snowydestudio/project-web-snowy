@@ -1,4 +1,12 @@
-/* Custom Utilities for smooth image loading & hover states */
+/* Universal Font Enforcement: Plus Jakarta Sans */
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, div {
+    font-family: 'Plus Jakarta Sans';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 .img-hover { transition: transform 0.5s ease; }
 .img-container:hover .img-hover { transform: scale(1.05); }
 .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
