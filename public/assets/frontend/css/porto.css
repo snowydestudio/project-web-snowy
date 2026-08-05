@@ -1,4 +1,7 @@
-/* style.css */
+/* Universal Font Enforcement: Plus Jakarta Sans */
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, div {
+    font-family: 'Plus Jakarta Sans';
+}
 
 /* Custom Smooth Scrolling for the whole page */
 html {
