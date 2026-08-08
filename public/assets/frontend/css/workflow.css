@@ -27,16 +27,16 @@ body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, div {
 /* Accordion Specifics */
 .accordion-item {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid #f1f5f9;
+    border: 1px solid transparent;
 }
 
 .accordion-item:hover {
-    border-color: #cbd5e1;
+    border-color: transparent !important;
 }
 
 .accordion-item.open {
     background-color: #ffffff;
-    border-color: #0D7B8A;
+    border-color: transparent !important;
     box-shadow: 0 10px 25px -5px rgba(13, 123, 138, 0.08);
 }
 
