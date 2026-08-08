@@ -49,17 +49,17 @@
 
             <!-- Left Images: 4 foto ke bawah -->
             <div class="hidden lg:flex flex-col gap-3 self-start -mt-4 lg:-mt-6" data-aos="fade-right" data-aos-duration="900">
-                <div class="rounded-none overflow-hidden h-44 lg:h-52 xl:h-56 img-container shadow-lg">
-                    <img src="image about/Rectangle 22.png" alt="Rectangle 22" class="w-full h-full object-cover img-hover">
+                <div class="rounded-none overflow-hidden h-44 lg:h-52 xl:h-56 shadow-lg">
+                    <img src="image about/Rectangle 22.png" alt="Rectangle 22" class="w-full h-full object-cover">
                 </div>
-                <div class="rounded-none overflow-hidden h-36 lg:h-44 xl:h-48 img-container shadow-lg mr-5">
-                    <img src="image about/Rectangle 23.png" alt="Rectangle 23" class="w-full h-full object-fill img-hover">
+                <div class="rounded-none overflow-hidden h-36 lg:h-44 xl:h-48 shadow-lg mr-5">
+                    <img src="image about/Rectangle 23.png" alt="Rectangle 23" class="w-full h-full object-fill">
                 </div>
-                <div class="rounded-none overflow-hidden h-28 lg:h-32 xl:h-36 img-container shadow-lg">
-                    <img src="image about/Rectangle 24.png" alt="Rectangle 24" class="w-full h-full object-cover img-hover">
+                <div class="rounded-none overflow-hidden h-28 lg:h-32 xl:h-36 shadow-lg">
+                    <img src="image about/Rectangle 24.png" alt="Rectangle 24" class="w-full h-full object-cover">
                 </div>
-                <div class="rounded-none overflow-hidden h-32 lg:h-36 xl:h-40 img-container shadow-lg mr-5">
-                    <img src="image about/Rectangle 25.png" alt="Rectangle 25" class="w-full h-full object-cover img-hover">
+                <div class="rounded-none overflow-hidden h-32 lg:h-36 xl:h-40 shadow-lg mr-5">
+                    <img src="image about/Rectangle 25.png" alt="Rectangle 25" class="w-full h-full object-cover">
                 </div>
             </div>
 
@@ -75,17 +75,17 @@
 
             <!-- Right Images: 4 foto ke bawah -->
             <div class="hidden lg:flex flex-col gap-3 self-start -mt-4 lg:-mt-6" data-aos="fade-left" data-aos-duration="900">
-                <div class="rounded-none overflow-hidden h-44 lg:h-52 xl:h-56 img-container shadow-lg ml-5">
-                    <img src="image about/Rectangle 26.png" alt="Rectangle 26" class="w-full h-full object-cover img-hover">
+                <div class="rounded-none overflow-hidden h-44 lg:h-52 xl:h-56 shadow-lg ml-5">
+                    <img src="image about/Rectangle 26.png" alt="Rectangle 26" class="w-full h-full object-cover">
                 </div>
-                <div class="rounded-none overflow-hidden h-36 lg:h-44 xl:h-48 img-container shadow-lg">
-                    <img src="image about/Rectangle 27.png" alt="Rectangle 27" class="w-full h-full object-cover img-hover">
+                <div class="rounded-none overflow-hidden h-36 lg:h-44 xl:h-48 shadow-lg">
+                    <img src="image about/Rectangle 27.png" alt="Rectangle 27" class="w-full h-full object-cover">
                 </div>
-                <div class="rounded-none overflow-hidden h-28 lg:h-32 xl:h-36 img-container shadow-lg ml-5">
-                    <img src="image about/Rectangle 28.png" alt="Rectangle 28" class="w-full h-full object-cover img-hover">
+                <div class="rounded-none overflow-hidden h-28 lg:h-32 xl:h-36 shadow-lg ml-5">
+                    <img src="image about/Rectangle 28.png" alt="Rectangle 28" class="w-full h-full object-cover">
                 </div>
-                <div class="rounded-none overflow-hidden h-32 lg:h-36 xl:h-40 img-container shadow-lg">
-                    <img src="image about/Rectangle 29.png" alt="Rectangle 29" class="w-full h-full object-fill img-hover">
+                <div class="rounded-none overflow-hidden h-32 lg:h-36 xl:h-40 shadow-lg">
+                    <img src="image about/Rectangle 29.png" alt="Rectangle 29" class="w-full h-full object-fill">
                 </div>
             </div>
 
@@ -164,29 +164,29 @@
         </div>
         
         <!-- Background Banner Salju Full Width -->
-        <div class="relative bg-slate-900 text-white w-full flex-1 flex flex-col justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 pb-36 md:pb-48">
+        <div class="relative bg-slate-900 text-white w-full flex-1 flex flex-col justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 pb-20 md:pb-32 lg:pb-40">
             <!-- Background Image Overlay -->
             <div class="absolute inset-0 opacity-70">
                 <img src="image about/background salju.png" alt="Snow Background" class="w-full h-full object-cover">
             </div>
             
             <div class="relative max-w-7xl mx-auto w-full z-10">
-                <!-- Logo Solo Snowy di Kiri Atas Banner -->
-                <div class="mb-6 md:mb-8" data-aos="fade-right">
-                    <img src="image about/Logo solo snowy.png" alt="Snowy Logo" class="h-20 md:h-24 w-auto object-contain">
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
-                    <!-- Teks Kiri (Snowy terinspirasi...) -->
-                    <div data-aos="fade-up" class="max-w-lg">
-                        <p class="text-white text-base md:text-lg leading-relaxed font-normal">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start">
+                    <!-- Teks Kiri: Logo + Paragraf 1 (Ujung Kanan Berada di Tengah) -->
+                    <div data-aos="fade-up" class="w-full max-w-lg md:ml-auto md:pr-6">
+                        <!-- Logo Solo Snowy Pas di Atas Teks Kiri -->
+                        <div class="mb-6 md:mb-8" data-aos="fade-right">
+                            <img src="image about/Logo solo snowy.png" alt="Snowy Logo" class="h-20 md:h-28 lg:h-32 w-auto object-contain">
+                        </div>
+
+                        <p class="text-white text-lg md:text-xl lg:text-2xl leading-relaxed font-normal opacity-95 text-justify [text-justify:inter-word]">
                             Snowy terinspirasi dari keunikan setiap kepingan salju. Tidak ada dua kepingan yang benar-benar sama, sebagaimana tidak ada dua bisnis yang memiliki tantangan yang sama. Karena itu, kami percaya setiap proyek membutuhkan riset, pendekatan, dan solusi yang dirancang secara khusus sesuai dengan kebutuhan masing-masing bisnis.
                         </p>
                     </div>
                     
-                    <!-- Teks Kanan (Logo Snowy mengambil bentuk..., Diturunkan Posisinya) -->
-                    <div data-aos="fade-up" data-aos-delay="150" class="max-w-lg mt-8 md:mt-28">
-                        <p class="text-white text-base md:text-lg leading-relaxed font-normal">
+                    <!-- Teks Kanan: Di Kanan & Jauh Lebih Bawah (Posisi Sebelumnya) -->
+                    <div data-aos="fade-up" data-aos-delay="150" class="max-w-lg mt-28 md:mt-96 lg:mt-[440px]">
+                        <p class="text-white text-lg md:text-xl lg:text-2xl leading-relaxed font-normal opacity-95 text-justify [text-justify:inter-word]">
                             Logo Snowy mengambil bentuk aliran salju (snow flow) yang melambangkan perjalanan setiap proyek. Kami percaya solusi terbaik tidak lahir secara instan, tetapi melalui proses memahami, merancang, dan menyempurnakan setiap detail hingga memberikan dampak nyata bagi bisnis.
                         </p>
                     </div>
