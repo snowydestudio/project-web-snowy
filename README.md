@@ -1,58 +1,60 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Snowy - Web Development Agency ❄️
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Website-success?style=for-the-badge&logo=google-chrome)](https://snowy.site.je/?i=2)
 
-## About Laravel
+Repositori ini berisi *source code* untuk website **Snowy**, sebuah platform penyedia jasa pembuatan website profesional. Proyek ini dirancang untuk membantu UMKM, profesional, dan pemilik bisnis dalam membangun kehadiran digital (*digital presence*) melalui layanan pembuatan *company profile*, *landing page*, dan aplikasi web kustom.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🔗 Live Website
+Sistem ini sudah berjalan secara *live* dan dapat diakses melalui tautan berikut:  
+**[Kunjungi Website Snowy](https://snowy.site.je/?i=2)**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 👥 Tim & Pembagian Peran (Team & Roles)
 
-## Learning Laravel
+Proyek ini dikembangkan secara kolaboratif oleh tim yang terdiri dari 3 anggota dengan pembagian tugas yang terstruktur:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Nama | Peran | Area Kerja |
+| :--- | :--- | :--- |
+| **Gerald Dwight Andigha Cardinsyah** | CMS & Frontend Developer | CMS Architecture, Dynamic Content Integration, & Advanced Frontend Logic |
+| **Arief** | Frontend Developer | Design Slicing, Responsive Layout, & UI Interactivity |
+| **Syahrul Ferdiansyah** | User Researcher & UI/UX Designer | User Research, Wireframing, High-Fidelity Design, & Usability Testing |
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 💼 Peran & Tanggung Jawab Teknis (Technical Jobdesk)
 
-## Agentic Development
+### 🔍 1. User Research & UI/UX Design (Syahrul Ferdiansyah)
+* **Market & Competitor Research:** Menganalisis pasar jasa pembuatan web dan mengidentifikasi penawaran serta struktur harga dari *web agency* kompetitor.
+* **Information Architecture & User Journey:** Merancang struktur navigasi dan alur calon klien (*client journey*) dari melihat paket layanan hingga melakukan pemesanan.
+* **UI/UX Design & Prototyping:** Merancang tampilan antarmuka interaktif di Figma dari tahap *wireframe* (*low-fidelity*) hingga *design system* (*high-fidelity*).
+* **Usability Testing:** Mengumpulkan umpan balik (*feedback*) dari pengguna untuk memastikan alur konsultasi dan pemesanan jasa mudah dipahami.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### 🎨 2. Frontend Engineering (Arief)
+* **Design Slicing:** Mengubah rancangan visual Figma menjadi struktur kode HTML/CSS yang rapi dan presisi (*pixel-perfect*).
+* **Responsive Web Design (RWD):** Memastikan tata letak website beradaptasi dengan sempurna di layar Smartphone, Tablet, maupun Desktop.
+* **UI Components & Interactivity:** Mengembangkan komponen visual interaktif seperti *navbar*, *hero banner*, efek *hover*, dan navigasi *smooth scroll* menggunakan JavaScript.
 
-```bash
-composer require laravel/boost --dev
+### ⚙️ 3. CMS & Frontend Engineering (Gerald Dwight)
+* **CMS Setup & Architecture:** Merancang dan mengonfigurasi Content Management System (CMS) untuk memudahkan pengelolaan konten dinamis tanpa perlu mengubah kode sumber.
+* **Frontend-to-CMS Integration:** Menghubungkan antarmuka *frontend* dengan CMS agar data paket harga, daftar layanan, dan portofolio proyek dapat diperbarui secara fleksibel.
+* **Interactive Forms & CTA Logic:** Membangun dan mengelola logika formulir pemesanan/konsultasi interaktif yang terhubung langsung dengan WhatsApp/Email admin.
+* **Optimization & Deployment:** Melakukan pengujian performa, optimasi *loading speed*, serta konfigurasi *deployment* hingga website dapat diakses publik melalui domain `snowy.site.je`.
 
-php artisan boost:install
-```
+---
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## 🚀 Fitur Utama Website
+* **Hero & Value Proposition:** Tampilan utama yang menonjolkan keunggulan layanan pembuatan web Snowy.
+* **Katalog Layanan & Paket Harga:** Penjabaran detail paket jasa (Landing Page, Company Profile, Custom Web) beserta fiturnya.
+* **Showcase Portofolio:** Galeri hasil karya dan proyek website yang pernah dikerjakan untuk membangun kepercayaan calon klien.
+* **Formulir Konsultasi & Pemesanan:** Fitur integrasi satu-klik untuk langsung terhubung dengan tim Snowy melalui WhatsApp atau Email.
+* **Sistem Manajemen Konten (CMS):** Panel kontrol bagi internal tim untuk memperbarui portofolio dan daftar harga secara dinamis.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🛠️ Teknologi yang Digunakan
+* **Frontend:** HTML5, CSS3, JavaScript (ES6+), Bootstrap / Tailwind CSS
+* **CMS / Backend:** PHP / Custom CMS Architecture
+* **Design & Research Tools:** Figma, Canva, Google Forms
+* **Version Control:** Git, GitHub
+* **Deployment & Hosting:** Web Hosting Services
